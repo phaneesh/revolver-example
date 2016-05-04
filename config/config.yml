@@ -36,3 +36,23 @@ revolver:
             threadPool:
               concurrency: 5
               timeout: 10000
+    - type: https
+      service: httpbin
+      connectionPoolSize: 5
+      connectionKeepAliveInMillis: 60000
+      authEnabled: false
+      endpoint:
+        type: simple
+        host: httpbin.org
+        port: 443
+      apis:
+        - api: ip
+          async: false
+          path: "ip"
+          whitelist: true
+          methods:
+            - GET
+          runtime:
+            threadPool:
+              concurrency: 5
+              timeout: 100000
