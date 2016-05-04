@@ -4,19 +4,19 @@ This is a simple example (hello world of sorts) for [Revolver](https://github.co
 This application compiles only on Java 8.
 
 ## Usage
-Build a downstream proxy with ease that enables transparent callback support 
+A simple dropwizard app showcasing how revolver bundle can be used.
  
 ### Build instructions
   - Clone the source:
 
-        ```git clone github.com/phaneesh/revolver-example```
+        git clone github.com/phaneesh/revolver-example
 
   - Build
 
-        ```mvn clean package```
+        mvn clean package
   - Run
         
-        ```docker-compose up```  
+        docker-compose up  
 
 Contributors
 ------------
