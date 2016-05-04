@@ -1,0 +1,19 @@
+zookeeper:
+  image: zookeeper
+  hostname: zookeeper
+  ports:
+    - "2181:2181"
+
+#revolver-example compose
+phonepe-api:
+  container_name: revolver-example
+  build: .
+  ports:
+   - "8080:8080"
+   - "8081:8081"
+
+# enviroment valiables
+  environment:
+   - GC_ALGO=UseG1GC
+   - JAVA_PROCESS_MIN_HEAP=512m
+   - JAVA_PROCESS_MAX_HEAP=512m
