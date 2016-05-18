@@ -33,6 +33,6 @@ public class ExampleApp extends Application<ExampleAppConfiguration> {
 
     @Override
     public void run(ExampleAppConfiguration exampleAppConfiguration, Environment environment) throws Exception {
-
+        environment.jersey().register(new ExampleResource());
     }
 }

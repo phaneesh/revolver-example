@@ -27,7 +27,7 @@ revolver:
           methods:
             - GET
           authorization:  #Optional metadata for external authorization systems. Omitting the config will not effect behaviour
-            type: dynamic #can
+            type: dynamic #can be an indicator of authorization/authentication mechanism used
             methods:
                 - GET
             roles:
@@ -56,3 +56,23 @@ revolver:
             threadPool:
               concurrency: 5
               timeout: 100000
+    - type: http
+      service: local
+      connectionPoolSize: 5
+      connectionKeepAliveInMillis: 60000
+      authEnabled: false
+      endpoint:
+        type: simple
+        host: localhost
+        port: 8080
+      apis:
+        - api: asyncTest
+          async: true
+          path: "v1/api/async"
+          whitelist: true
+          methods:
+            - POST
+          runtime:
+            threadPool:
+              concurrency: 2
+              timeout: 10000
